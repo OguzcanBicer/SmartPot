@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run SmartPot",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "src/main.cpp",
+        "-Iinclude",
+        "-o",
+        "build/main.exe"
+      ],
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": [
+            "-Command",
+            "g++ -std=c++17 src/main.cpp -Iinclude -o build/main.exe; if ($?) { .\\build\\main.exe }"
+          ]
+        }
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Compile SmartPot with C++17 and run it in PowerShell"
+    }
+  ]
+}
