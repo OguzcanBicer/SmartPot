@@ -48,8 +48,12 @@ private:
             sensorData.setTemperature(temp - tempEffect * dt);       // °C düşüş
 
             float humidity = sensorData.getHumidity();
-            float humidityDrop = std::min(humidity, 60.0f) / 100.0f * 0.3f * dt;
+            float humidityDrop = std::min(humidity, 60.0f) / 100.0f * 0.5f * dt;
             sensorData.setHumidity(humidity - humidityDrop);         // Fan nemi dağtırır → buharı uzaklaştırır           
+
+            float soilMoisture = sensorData.getSoilMoisture();
+            float soilMoistureDrop = std::min(soilMoisture, 60.0f) / 100.0f * 0.5f * dt;
+            sensorData.setSoilMoisture(soilMoisture - soilMoistureDrop);         // Fan nemi dağtırır → buharı uzaklaştırır           
         }
 
         // 🔥 Isıtıcı: Sıcaklığı yükseltir          +temp, -humidity
@@ -60,6 +64,8 @@ private:
 
             float humidity = sensorData.getHumidity();
             sensorData.setHumidity(humidity - 0.2f * dt);            // Isıtma → nemi düşürür (kurutur)
+            float soilMoisture = sensorData.getSoilMoisture();
+            sensorData.setSoilMoisture(soilMoisture - 0.2f * dt);
         }
 
         // 💡 Grow Light: Işık seviyesini sabit değerle yükseltir

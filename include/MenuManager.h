@@ -20,12 +20,15 @@ public:
 
         std::cout << "\nSensor Readings:\n";
         std::cout << "Soil Moisture : " << sensorData.getSoilMoisture() << " %\n";
-        std::cout << "Temperature   : " << sensorData.getTemperature() << " C\n";
         std::cout << "Humidity      : " << sensorData.getHumidity() << " %\n";
+        std::cout << "Temperature   : " << sensorData.getTemperature() << " C\n";
         std::cout << "Light Level   : " << sensorData.getLight() << " lux\n";
 
         std::cout << "\n Selected Plant Profile: " << profile.getName() << "\n";
-        std::cout << " - Min Moisture : " << profile.getMinSoilMoisture() << " %\n";
+        std::cout << " - Moisture Range : " << profile.getMinSoilMoisture() << " - "
+                << profile.getMaxSoilMoisture() << " %\n";
+        std::cout << " - Humidity Range : " << profile.getMinHumidity() << " - "
+                << profile.getMaxHumidity() << " %\n";
         std::cout << " - Temp Range   : " << profile.getMinTemperature() << " - "
                 << profile.getMaxTemperature() << " C\n";
         std::cout << " - Min Light    : " << profile.getMinLight() << " lux\n";

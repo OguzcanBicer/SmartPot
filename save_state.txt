@@ -1,5 +1,5 @@
 selectedProfile=Tomato
-soilMoisture=65.6687
-temperature=34.4071
-humidity=41.2355
+soilMoisture=15.4999
+temperature=14.287
+humidity=0
 light=400

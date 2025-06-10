@@ -8,7 +8,7 @@
 
 class SmartPotSetup {
 public:
-    static void setup(SensorController& sensorController, DeviceController deviceController, PlantProfileManager& profileManager) {
+    static void setup(SensorController& sensorController, DeviceController& deviceController, PlantProfileManager& profileManager) {
         profileManager.loadProfilesFromCSV("plants.csv");
         AppStateManager::load("save_state.txt", profileManager, sensorController);
         SettingsManager settings;

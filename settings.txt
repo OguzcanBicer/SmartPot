@@ -1,4 +1,4 @@
-pumpDuration=12
-fanDuration=25
-heaterDuration=40
+pumpDuration=3
+fanDuration=15
+heaterDuration=10
 firebase_url=https://smartpot-default-rtdb.firebaseio.com/

@@ -7,9 +7,9 @@
 
 class DeviceController {
 public:
-    int pumpDurationSec = 10;
-    int fanDurationSec = 30;
-    int heaterDurationSec = 30;
+    int pumpDurationSec;
+    int fanDurationSec;
+    int heaterDurationSec;
 
     std::chrono::steady_clock::time_point pumpActivated;
     std::chrono::steady_clock::time_point fanActivated;
